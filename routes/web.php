@@ -23,6 +23,9 @@ Route::get('loginsuccess', function () {
     return view('loginsuccess');
 });
 
-Route::post('register', [RegistrationController::class, 'store'])->name('register');
+Route::middleware('guest')->group(function () {
+    Route::post('register', [RegistrationController::class, 'store'])->name('register');
+    Route::post('login', [LoginController::class, 'store'])->name('login');
+});
 
-Route::post('login', [LoginController::class, 'store'])->name('login');
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');

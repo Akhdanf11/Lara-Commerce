@@ -132,12 +132,10 @@
                                 <a href="#" class="btn cart_btn">{{ Auth::user()->name }}</a>
                                 <ul class="dropdown_content">
                                     <li class="list_content">
-                                        <a href="#">
-                                            <img class="float-left" src="http://via.placeholder.com/50x50" alt="50x50">
-                                            <p>Dolar Sit Amet</p>
-                                            <small>1 × $7.90</small>
-                                            <span class="close_icon float-right"><i class="fa fa-plus"></i></span>
-                                        </a>
+                                        <form action="{{ route('logout') }}" method="post">
+                                            @csrf
+                                            <button type="submit" class="btn btn-lg btn-danger">Logout</button>
+                                        </form>
                                     </li>
                                 </ul>
                             </li>
