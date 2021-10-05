@@ -21,6 +21,8 @@ class LoginController extends Controller
 
         if(Auth::attempt($attributes)){
             return redirect('/home')->with('success', 'Login Success');
+        }else {
+            return redirect('/')->with('error', 'Login gagal');
         }
 
         // throw ValidationException::withMessages([
