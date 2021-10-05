@@ -60,13 +60,6 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#"><span class="title">Events</span></a>
-                    <ul>
-                        <li><a href="page-event.html">Event List</a></li>
-                        <li><a href="page-event-single.html">Event Single</a></li>
-                    </ul>
-                </li>
-                <li>
                     <a href="#"><span class="title">Pages</span></a>
                     <ul>
                         <li>

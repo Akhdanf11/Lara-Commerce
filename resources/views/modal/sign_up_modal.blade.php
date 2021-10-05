@@ -40,12 +40,15 @@
                                   </div>
                               @enderror
                           </div>
-                          <div class="form-group custom-control custom-checkbox">
-                              <input type="checkbox" class="custom-control-input" id="exampleCheck1">
-                              <label class="custom-control-label" for="exampleCheck1">Remember me</label>
-                              <a class="tdu btn-fpswd float-right" href="#">Forgot Password?</a>
-                          </div>
                           <button type="submit" class="btn btn-log btn-block btn-thm2">Login</button>
+                          <div class="form-group custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="exampleCheck1">
+                            <label class="custom-control-label" for="exampleCheck1">Remember me</label>
+                            {{-- <form action="{{ route('email') }}" method="post"> --}}
+                                  @csrf
+                                  <a class="tdu btn-fpswd float-right" href="{{ route('email') }}">Forgot Password?</a>
+                            {{-- </form> --}}
+                        </div>
                           <hr>
                           <div class="row mt40">
                               <div class="col-lg">
@@ -102,7 +105,7 @@
                               <input type="checkbox" class="custom-control-input" id="exampleCheck2">
                               <label class="custom-control-label" for="exampleCheck2">Want to become an instructor?</label>
                           </div>
-                          <button type="submit" class="btn btn-log btn-block btn-thm2">Register</button>
+                          <button  type="submit" class="btn btn-log btn-block btn-thm2">Register</button>
                           <hr>
                           <div class="row mt40">
                               <div class="col-lg">

@@ -9,6 +9,7 @@
 	<!-- 2nd Home Slider -->
     @include('main.mainSlider')
 
+
 	<!-- School Category Courses -->
 	@include('main.lessKatalog')
 

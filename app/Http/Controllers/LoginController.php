@@ -20,7 +20,7 @@ class LoginController extends Controller
         ]);
 
         if(Auth::attempt($attributes)){
-            return redirect('/loginsuccess')->with('success', 'Login Success');
+            return redirect('/home')->with('success', 'Login Success');
         }
 
         // throw ValidationException::withMessages([
@@ -32,6 +32,6 @@ class LoginController extends Controller
     {
         Auth::logout();
 
-        return redirect('/');
+        return redirect('/')->with('success', 'Logout Success');
     }
 }

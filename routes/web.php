@@ -1,7 +1,9 @@
 <?php
 
+
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistrationController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,17 +17,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('loginsuccess', function () {
-    return view('loginsuccess');
+Route::get('/home', function () {
+    return view('user.home');
 });
+
+Route::get('/email', function () {
+    return view('auth.passwords.email');
+})->name('email');
 
 Route::middleware('guest')->group(function () {
-    Route::post('register', [RegistrationController::class, 'store'])->name('register');
-    Route::post('login', [LoginController::class, 'store'])->name('login');
+
 });
 
+Route::post('register', [RegistrationController::class, 'store'])->name('register');
+Route::post('login', [LoginController::class, 'store'])->name('login');
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+
+// Route::post('email', [ResetPasswordController::class, 'email'])->name('email');
+
+
+
+
