@@ -20,7 +20,10 @@
             <!--Note: declare the Menu style in the data-menu-style="horizontal" (options: horizontal, vertical, accordion) -->
             <ul id="respMenu" class="ace-responsive-menu" data-menu-style="horizontal">
                 <li>
-                    <a href="#"><span class="title">Home</span></a>
+                    @if (Auth::check())
+                    <a href="{{  route('index.user') }}"><span class="title">Home</span></a>
+                    @endif
+
                     <!-- Level Two-->
                     <ul>
                         <li><a href="index-2.html">Home 1</a></li>

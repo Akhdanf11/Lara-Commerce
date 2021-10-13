@@ -1,11 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="jumbotron jumbotron-fluid bg-primary">
+    <div class="container">
+      <h1 class="display-4 text-light">Fluid jumbotron</h1>
+      <p class="lead text-dark">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    </div>
+  </div>
+<div class="container pb-lg-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+            <div class="card alert-primary">
+                <div class="card-header bg-primary text-light">{{ __('Reset Password') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('password.update') }}">

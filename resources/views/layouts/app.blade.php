@@ -27,7 +27,7 @@
 </head>
 <body>
 <div class="wrapper">
-	<div class="preloader"></div>
+	{{-- <div class="preloader"></div> --}}
 
 	<!-- Main Header Nav -->
 		@include('layouts.navigation')

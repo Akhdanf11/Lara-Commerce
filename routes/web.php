@@ -24,16 +24,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('user.home');
-});
 
 Route::get('/email', function () {
     return view('auth.passwords.email');
 })->name('email');
 
 Route::middleware('guest')->group(function () {
-
+    Route::get('/home', function () {
+        return view('user.home');
+    });
 });
 
 Route::post('register', [RegistrationController::class, 'store'])->name('register');
